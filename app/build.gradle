@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    defaultConfig {
+        applicationId "com.spitaliere.marvelcharacters"
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: submodulesPlatform.data)
+    implementation project(path: submodulesPlatform.domain)
+
+    implementation globalDependencies.rxJava
+    implementation globalDependencies.rxKotlin
+    implementation globalDependencies.rxAndroid
+
+    implementation globalDependencies.legacy
+    testImplementation testDependencies.junit
+    androidTestImplementation testDependencies.runner
+    androidTestImplementation testDependencies.espresso
+
+    implementation globalDependencies.appCompact
+    implementation globalDependencies.cardView
+    implementation globalDependencies.recyclerView
+
+    implementation globalDependencies.picasso
+
+    implementation globalDependencies.kotlin
+
+    implementation globalDependencies.ktx
+
+    implementation globalDependencies.constraintlayout
+    implementation globalDependencies.viewModel
+
+    implementation globalDependencies.lifeCycle
+    implementation globalDependencies.paging
+
+    implementation globalDependencies.koin
+    implementation globalDependencies.koinViewModel
+
+    implementation globalDependencies.rxJava
+    implementation globalDependencies.rxKotlin
+    implementation globalDependencies.rxAndroid
+
+
+    kapt globalDependencies.dataBinding
+    implementation globalDependencies.materialDesign
+}
