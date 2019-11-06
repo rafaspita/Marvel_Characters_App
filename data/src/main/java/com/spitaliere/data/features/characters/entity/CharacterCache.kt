@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import com.spitaliere.data.platform.database.converters.StringListConverter
+import com.spitaliere.domain.features.characters.model.CharacterInfo
 
 /**
  * Created by Rafael Spitaliere on 02/11/2019.
@@ -17,4 +18,15 @@ data class CharacterCache(
     val thumbnail : String,
     @TypeConverters(StringListConverter::class)
     val comics : List<String>
+)
+
+//mappers
+fun List<CharacterCache>.mapCharacterToDomain() = map { it.mapToDomain() }
+
+fun CharacterCache.mapToDomain() = CharacterInfo(
+    id = id,
+    name = name,
+    description = description,
+    thumbnail = thumbnail,
+    comics  = comics
 )

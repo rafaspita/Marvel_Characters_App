@@ -6,6 +6,7 @@ dependencies {
     implementation globalDependencies.rxJava
     implementation globalDependencies.rxKotlin
     implementation globalDependencies.koin
+    implementation globalDependencies.paging
 
     testImplementation testDependencies.junit
     testImplementation testDependencies.runner

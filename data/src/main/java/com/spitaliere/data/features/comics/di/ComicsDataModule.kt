@@ -13,7 +13,7 @@ import org.koin.dsl.module
 /**
  * Created by Rafael Spitaliere on 03/11/2019.
  **/
-object ComicsModule {
+object ComicsDataModule {
 
     fun getModule() = module {
         single { AppDataBase.createDataBase(androidContext()).comicsDao() }

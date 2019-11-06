@@ -22,7 +22,7 @@ class ComicsRepositoryImpl(
             .onErrorResumeNext { throwable ->
                 when (throwable) {
                     is EmptyResultSetException -> return@onErrorResumeNext Single.just(ComicsCache(characterId, listOf()))
-                    else -> return@onErrorResumeNext Single.just(ComicsCache(characterId, listOf()))
+                    else -> return@onErrorResumeNext Single.error(throwable)
                 }
             }.flatMap { comicsCache ->
                 when {

@@ -1,5 +1,6 @@
 package com.spitaliere.domain.platform.di
 
+import com.spitaliere.domain.features.characters.di.CharactersDomainModule
 import com.spitaliere.domain.features.comics.di.ComicsDomainModule
 
 /**
@@ -8,6 +9,7 @@ import com.spitaliere.domain.features.comics.di.ComicsDomainModule
 object DomainModules {
 
     fun getModules() = listOf(
+        CharactersDomainModule.getModule(),
         ComicsDomainModule.getModule()
     )
 }

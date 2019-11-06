@@ -47,6 +47,7 @@ dependencies {
 
     implementation globalDependencies.lifeCycle
     implementation globalDependencies.paging
+    implementation globalDependencies.pagingRx
 
     implementation globalDependencies.koin
     implementation globalDependencies.koinViewModel

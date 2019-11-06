@@ -1,9 +1,8 @@
 package com.spitaliere.data.features.characters.datasource.remote
 
 import com.spitaliere.data.api.MarvelApi
-import com.spitaliere.data.api.response.ApiResponse
-import com.spitaliere.data.api.response.CharacterResult
-import com.spitaliere.data.api.response.Data
+import com.spitaliere.data.api.response.mapCharactersToCache
+import com.spitaliere.data.features.characters.entity.CharacterCache
 import io.reactivex.Single
 
 /**
@@ -14,10 +13,8 @@ class CharacterRemoteDataSourceImpl(
 ) : CharacterRemoteDataSource {
 
     override fun getCharacters(
-        limit: String,
         offset: String
-    ): Single<ApiResponse<Data<CharacterResult>>> = marvelApi.getCharacters(
-        limit = limit,
+    ): Single<List<CharacterCache>> = marvelApi.getCharacters(
         offset = offset
-    )
+    ).map { it.data.results.mapCharactersToCache() }
 }

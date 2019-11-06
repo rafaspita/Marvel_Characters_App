@@ -69,6 +69,7 @@ ext {
             viewModel             : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion",
             lifeCycle             : "android.arch.lifecycle:extensions:$AndroidArchVersion",
             paging                : "androidx.paging:paging-runtime:$paging",
+            pagingRx              : "android.arch.paging:rxjava2:$paging",
             legacy                : "androidx.legacy:legacy-support-v4:$legacy",
 
             dataBinding           : "com.android.databinding:compiler:$databindingVersion",

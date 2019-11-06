@@ -48,7 +48,7 @@ data class Thumbnail (
     val path : String,
     val extension : String
 ){
-    fun getImageUrl() = "$path.$extension"
+    fun getImageUrl() = "$path.$extension".replace("http", "https")
 }
 
 data class Comics (

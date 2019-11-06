@@ -8,5 +8,5 @@ import io.reactivex.Single
  **/
 interface CharacterRepository {
 
-    fun getCharacters( limit: String, offset: String): Single<List<CharacterInfo>>
+    fun getCharacters(offset: String): Single<List<CharacterInfo>>
 }

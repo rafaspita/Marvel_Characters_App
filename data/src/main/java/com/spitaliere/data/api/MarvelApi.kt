@@ -16,7 +16,6 @@ interface MarvelApi {
 
     @GET("characters")
     fun getCharacters(
-        @Query("limit") limit: String,
         @Query("offset") offset: String
     ): Single<ApiResponse<Data<CharacterResult>>>
 

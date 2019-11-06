@@ -13,12 +13,13 @@ import org.koin.dsl.module
 /**
  * Created by Rafael Spitaliere on 02/11/2019.
  **/
-object CharacterModule {
+object CharacterDataModule {
 
     fun getModule() = module {
         single { AppDataBase.createDataBase(androidContext()).characterDao() }
+        single { AppDataBase.createDataBase(androidContext()).offSetDao() }
         single<CharacterRemoteDataSource>{ CharacterRemoteDataSourceImpl(marvelApi = get()) }
-        single<CharacterLocalDataSource>{ CharacterLocalDataSourceImpl(characterDao = get()) }
+        single<CharacterLocalDataSource>{ CharacterLocalDataSourceImpl(characterDao = get(), offsetDao = get()) }
         single<CharacterRepository>{ CharacterRepositoryImpl(remoteDataSource = get(), localDataSource = get()) }
     }
 }

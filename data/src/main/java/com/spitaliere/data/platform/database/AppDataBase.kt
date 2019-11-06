@@ -6,7 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.spitaliere.data.features.characters.dao.CharacterDao
+import com.spitaliere.data.features.characters.dao.OffSetDao
 import com.spitaliere.data.features.characters.entity.CharacterCache
+import com.spitaliere.data.features.characters.entity.OffSetCache
 import com.spitaliere.data.features.comics.dao.ComicsDao
 import com.spitaliere.data.features.comics.entity.ComicsCache
 import com.spitaliere.data.platform.database.converters.ComicsInfoConverter
@@ -19,6 +21,7 @@ import com.spitaliere.data.platform.database.converters.StringListConverter
     version = 1,
     entities = [
         CharacterCache::class,
+        OffSetCache::class,
         ComicsCache::class
     ],
     exportSchema = true
@@ -29,6 +32,7 @@ import com.spitaliere.data.platform.database.converters.StringListConverter
 ])
 abstract class AppDataBase : RoomDatabase() {
     abstract fun characterDao(): CharacterDao
+    abstract fun offSetDao(): OffSetDao
     abstract fun comicsDao(): ComicsDao
 
     companion object{
