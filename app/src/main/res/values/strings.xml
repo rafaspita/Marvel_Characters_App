@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Marvel Heroes</string>
+    <string name="description">Description</string>
+    <string name="try_again">Try Again</string>
+    <string name="comics">Comics (%d)</string>
+    <string name="s_pages">%s pages</string>
+    <string name="format_s">Format: %s</string>
+    <string name="description_s">Description: %s</string>
+</resources>

@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: submodulesPlatform.domain)
+
+    implementation globalDependencies.kotlin
+    implementation globalDependencies.appCompact
+    implementation globalDependencies.ktx
+
+    implementation globalDependencies.rxJava
+    implementation globalDependencies.koin
+
+    implementation globalDependencies.retrofit
+    implementation globalDependencies.retrofitRxAdapter
+    implementation globalDependencies.retrofitLogging
+    implementation globalDependencies.retrofitGsonConverter
+    implementation globalDependencies.gson
+
+    implementation globalDependencies.room
+    implementation globalDependencies.roomRxJava
+    kapt globalDependencies.roomCompiler
+
+    implementation globalDependencies.paging
+
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.runner
+    testImplementation testDependencies.roboletric
+    testImplementation testDependencies.mockk
+    testImplementation testDependencies.koinTest
+    androidTestImplementation testDependencies.espresso
+}

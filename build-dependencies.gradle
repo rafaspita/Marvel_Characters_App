@@ -1,0 +1,118 @@
+ext {
+
+    //android
+    appCompactVersion = '1.1.0'
+    kotlinVersion = '1.3.50'
+    AndroidArchVersion = '1.1.1'
+    databindingVersion = '3.1.4'
+    lifeCycleVersion = '2.1.0'
+    ktxVersion = '1.1.0'
+    paging = '2.1.0'
+    legacy = '1.0.0'
+    constrainVersion = '1.1.3'
+    cardViewVersion = '1.0.0'
+    recyclerViewVersion = '1.0.0'
+    materialDesign = '1.0.0'
+
+    //images
+    picassoVersion = '2.71828'
+    lottieVersion = '3.0.7'
+    circleImage = '3.0.1'
+
+    //Rx
+    rxJavaVersion = '2.2.7'
+    rxKotlinVersion = '2.2.0'
+    rxAndroidVersion = '2.1.1'
+
+    //Koin
+    koinVersion = '2.0.0-rc-1'
+    koinTest = '2.0.1'
+
+    //Retrofit
+    retrofitVersion = '2.6.2'
+    retrofitLogging = '4.2.0'
+
+    //Gson
+    gsonVersion = '2.8.6'
+
+    //Room
+    roomVersion = '2.2.1'
+
+    //navigation
+    navVersion = '2.1.0'
+
+    //Test
+    junitVersion = '4.12'
+    espressoVersion = '3.2.0'
+    runnerVersion = '1.2.0'
+    roboletricVersion = '4.3'
+    mockk = '1.9.3'
+
+    //Firebase
+    fbAnalytics = '17.2.0'
+    fbAuth = '19.1.0'
+    fbStorage = '19.1.0'
+
+    submodulesPlatform = [
+            domain                          : ':domain',
+            data                            : ':data',
+            localData                       : ':localData',
+    ]
+
+    globalDependencies = [
+            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+
+            appCompact            : "androidx.appcompat:appcompat:$appCompactVersion",
+            constraintlayout      : "androidx.constraintlayout:constraintlayout:$constrainVersion",
+            cardView              : "androidx.cardview:cardview:$cardViewVersion",
+            recyclerView          : "androidx.recyclerview:recyclerview:$recyclerViewVersion",
+            materialDesign        : "com.google.android.material:material:$materialDesign",
+
+            picasso               : "com.squareup.picasso:picasso:$picassoVersion",
+            lottie                : "com.airbnb.android:lottie:$lottieVersion",
+            circleImage           : "de.hdodenhof:circleimageview:$circleImage",
+
+            viewModel             : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion",
+            lifeCycle             : "android.arch.lifecycle:extensions:$AndroidArchVersion",
+            paging                : "androidx.paging:paging-runtime:$paging",
+            pagingRx              : "android.arch.paging:rxjava2:$paging",
+            legacy                : "androidx.legacy:legacy-support-v4:$legacy",
+
+            dataBinding           : "com.android.databinding:compiler:$databindingVersion",
+
+            navigationUi          : "androidx.navigation:navigation-fragment-ktx:$navVersion",
+            navigationFrag        : "androidx.navigation:navigation-ui-ktx:$navVersion",
+
+            ktx                   : "androidx.core:core-ktx:$ktxVersion",
+
+            rxJava                : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxKotlin              : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            rxAndroid             : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+
+            koin                  : "org.koin:koin-android:$koinVersion",
+            koinViewModel         : "org.koin:koin-androidx-viewmodel:$koinVersion",
+
+            retrofit              : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitRxAdapter     : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            retrofitLogging       : "com.squareup.okhttp3:logging-interceptor:$retrofitLogging",
+            retrofitGsonConverter : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            gson                  : "com.google.code.gson:gson:$gsonVersion",
+
+            room                  : "androidx.room:room-runtime:$roomVersion",
+            roomRxJava            : "androidx.room:room-rxjava2:$roomVersion",
+            roomCompiler          : "androidx.room:room-compiler:$roomVersion",
+
+            firebaseAnalytics     : "com.google.firebase:firebase-analytics:$fbAnalytics",
+            firebaseStorage       : "com.google.firebase:firebase-storage:$fbStorage",
+            firebaseAuth          : "com.google.firebase:firebase-auth:$fbAuth"
+    ]
+
+    testDependencies = [
+            junit                 : "junit:junit:$junitVersion",
+            espresso              : "androidx.test.espresso:espresso-core:$espressoVersion",
+            runner                : "androidx.test:runner:$runnerVersion",
+            roboletric            : "org.robolectric:robolectric:$roboletricVersion",
+            mockk                 : "io.mockk:mockk:$mockk",
+            koinTest              : "org.koin:koin-test:$koinTest"
+    ]
+}

@@ -1,0 +1,14 @@
+ext {
+
+    // Sdk and tools
+    minSdk = 21
+    targetSdk = 29
+    compileSdk = 29
+    buildTools = '29.0.0'
+
+    // App dependencies
+    javaVersion = JavaVersion.VERSION_1_8
+
+    // Test
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+}
