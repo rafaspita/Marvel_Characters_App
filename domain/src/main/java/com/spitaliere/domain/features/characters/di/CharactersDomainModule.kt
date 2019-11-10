@@ -1,6 +1,7 @@
 package com.spitaliere.domain.features.characters.di
 
 import com.spitaliere.domain.features.characters.paging.CharacterDataSourceFactory
+import com.spitaliere.domain.features.characters.usecase.RetryUsecase
 import org.koin.dsl.module
 
 /**
@@ -10,5 +11,6 @@ object CharactersDomainModule {
 
     fun getModule() = module {
         single { CharacterDataSourceFactory(characterRepository = get()) }
+        single { RetryUsecase() }
     }
 }

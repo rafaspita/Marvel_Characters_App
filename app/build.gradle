@@ -37,6 +37,7 @@ dependencies {
     implementation globalDependencies.recyclerView
 
     implementation globalDependencies.picasso
+    implementation globalDependencies.circleImage
 
     implementation globalDependencies.kotlin
 
@@ -48,6 +49,9 @@ dependencies {
     implementation globalDependencies.lifeCycle
     implementation globalDependencies.paging
     implementation globalDependencies.pagingRx
+
+    implementation globalDependencies.navigationUi
+    implementation globalDependencies.navigationFrag
 
     implementation globalDependencies.koin
     implementation globalDependencies.koinViewModel

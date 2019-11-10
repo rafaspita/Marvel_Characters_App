@@ -17,6 +17,7 @@ ext {
     //images
     picassoVersion = '2.71828'
     lottieVersion = '3.0.7'
+    circleImage = '3.0.1'
 
     //Rx
     rxJavaVersion = '2.2.7'
@@ -35,6 +36,9 @@ ext {
 
     //Room
     roomVersion = '2.2.1'
+
+    //navigation
+    navVersion = '2.1.0'
 
     //Test
     junitVersion = '4.12'
@@ -65,6 +69,7 @@ ext {
 
             picasso               : "com.squareup.picasso:picasso:$picassoVersion",
             lottie                : "com.airbnb.android:lottie:$lottieVersion",
+            circleImage           : "de.hdodenhof:circleimageview:$circleImage",
 
             viewModel             : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion",
             lifeCycle             : "android.arch.lifecycle:extensions:$AndroidArchVersion",
@@ -73,6 +78,9 @@ ext {
             legacy                : "androidx.legacy:legacy-support-v4:$legacy",
 
             dataBinding           : "com.android.databinding:compiler:$databindingVersion",
+
+            navigationUi          : "androidx.navigation:navigation-fragment-ktx:$navVersion",
+            navigationFrag        : "androidx.navigation:navigation-ui-ktx:$navVersion",
 
             ktx                   : "androidx.core:core-ktx:$ktxVersion",
 

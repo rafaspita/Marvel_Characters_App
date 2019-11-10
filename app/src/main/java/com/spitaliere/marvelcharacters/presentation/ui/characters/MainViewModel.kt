@@ -5,27 +5,37 @@ import androidx.paging.PagedList
 import androidx.paging.RxPagedListBuilder
 import com.spitaliere.domain.features.characters.model.CharacterInfo
 import com.spitaliere.domain.features.characters.paging.CharacterDataSourceFactory
+import com.spitaliere.domain.features.characters.usecase.RetryUsecase
 import com.spitaliere.marvelcharacters.presentation.platform.base.BaseViewModel
+import com.spitaliere.marvelcharacters.presentation.platform.extension.invokeOnBackground
 import io.reactivex.Observable
+import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 
 /**
  * Created by Rafael Spitaliere on 05/11/2019.
  **/
-class CharactersViewModel(
-    dataSourceFactory: CharacterDataSourceFactory
+class MainViewModel(
+   private  val dataSourceFactory: CharacterDataSourceFactory,
+   private val retryUsecase: RetryUsecase
 ) : BaseViewModel() {
 
     var characterPageList : Observable<PagedList<CharacterInfo>>
     val isLoading = MutableLiveData<Boolean>()
+    val errorLiveData = MutableLiveData<Throwable>()
+
 
     init {
         disposables.add(dataSourceFactory.composite)
-        dataSourceFactory.onLoad.show = { isLoading.postValue(it) }
+
+        with( dataSourceFactory.listeners){
+            showLoading = { isLoading.postValue(it) }
+            onError = { errorLiveData.postValue(it) }
+        }
 
         val pageSize = 20
 
-        val config = PagedList.Config.Builder()
+        val config: PagedList.Config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)
             .setInitialLoadSizeHint(pageSize * 3)
             .setPageSize(pageSize)
@@ -37,4 +47,12 @@ class CharactersViewModel(
             .buildObservable()
             .cache()
     }
+
+    fun tryAgain() = retryUsecase
+        .invokeOnBackground { dataSourceFactory.listeners.retry() }
+        .subscribeBy(
+            onError = {errorLiveData.postValue(it)}
+        )
+
+
 }

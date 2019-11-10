@@ -13,14 +13,18 @@ class CharacterDataSourceFactory(
 ) : DataSource.Factory<Int, CharacterInfo>() {
 
     val composite: CompositeDisposable = CompositeDisposable()
-    var onLoad: OnPagingLoading = OnPagingLoading {  }
+    var listeners: PagingListeners = PagingListeners()
 
     override fun create(): DataSource<Int, CharacterInfo> = CharacterDataSource(
         characterRepository = characterRepository,
         compositeDisposable = composite,
-        onLoading = onLoad
+        listeners = listeners
     )
 
 }
 
-data class OnPagingLoading(var show: ((isLoading: Boolean) -> Unit))
+data class PagingListeners(
+    var showLoading: ((isLoading: Boolean) -> Unit) = {},
+    var onError: ((error: Throwable?) -> Unit) = {},
+    var retry: (() -> Unit) = {}
+)

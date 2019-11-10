@@ -3,7 +3,8 @@ package com.spitaliere.marvelcharacters
 import android.app.Application
 import com.spitaliere.data.platform.di.DataModules
 import com.spitaliere.domain.platform.di.DomainModules
-import com.spitaliere.marvelcharacters.presentation.ui.characters.CharactersPresentationModule
+import com.spitaliere.marvelcharacters.presentation.ui.characters.MainPresentationModule
+import com.spitaliere.marvelcharacters.presentation.ui.characters.fragments.details.DetailsModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -18,7 +19,8 @@ class MarvelCharactersApplication : Application() {
             modules(modules =
                 DataModules.getDataModules()
                         + DomainModules.getModules()
-                        + CharactersPresentationModule.getModule()
+                        + MainPresentationModule.getModule()
+                        + DetailsModule.getModule()
             )
         }
     }

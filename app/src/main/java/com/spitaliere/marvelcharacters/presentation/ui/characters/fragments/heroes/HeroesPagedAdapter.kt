@@ -1,4 +1,4 @@
-package com.spitaliere.marvelcharacters.presentation.ui.characters
+package com.spitaliere.marvelcharacters.presentation.ui.characters.fragments.heroes
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -13,17 +13,17 @@ import com.spitaliere.marvelcharacters.databinding.ItemCharacterBinding
 import com.spitaliere.marvelcharacters.presentation.platform.extension.setImage
 
 /**
- * Created by Rafael Spitaliere on 05/11/2019.
+ * Created by Rafael Spitaliere on 06/11/2019.
  **/
-class CharacterPagedAdapter : PagedListAdapter<CharacterInfo, CharacterPagedAdapter.CharacterViewHolder>(diffCallback) {
+class HeroesPagedAdapter : PagedListAdapter<CharacterInfo, HeroesPagedAdapter.HeroesViewHolder>(diffCallback) {
 
     lateinit var clickListener : (characterInfo: CharacterInfo) -> Unit
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
-        return CharacterViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_character, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroesViewHolder {
+        return HeroesViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_character, parent, false))
     }
 
-    override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HeroesViewHolder, position: Int) {
         val item = getItem(position)
         holder.binding.setVariable(BR.item, item)
 
@@ -34,8 +34,7 @@ class CharacterPagedAdapter : PagedListAdapter<CharacterInfo, CharacterPagedAdap
 
     }
 
-    class CharacterViewHolder(val binding: ItemCharacterBinding) : RecyclerView.ViewHolder(binding.root)
-
+    class HeroesViewHolder(val binding: ItemCharacterBinding) : RecyclerView.ViewHolder(binding.root)
 
     companion object {
         private val diffCallback = object : DiffUtil.ItemCallback<CharacterInfo>() {

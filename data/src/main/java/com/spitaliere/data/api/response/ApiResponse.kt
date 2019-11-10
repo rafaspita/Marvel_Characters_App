@@ -27,7 +27,7 @@ data class Data<RESULTS>(
 data class CharacterResult (
     val id : String,
     val name : String,
-    val description : String,
+    val description : String?,
     val thumbnail : Thumbnail,
     val comics : Comics
 )
@@ -71,7 +71,7 @@ fun List<CharacterResult>.mapCharactersToCache() : List<CharacterCache> = map { 
 fun CharacterResult.mapToCache() : CharacterCache = CharacterCache(
     id = id,
     name = name,
-    description = description,
+    description = description?.ifBlank { "No Description" } ?: "No Description",
     thumbnail = thumbnail.getImageUrl(),
     comics = comics.items.map { it.getComicsId() }
 )
