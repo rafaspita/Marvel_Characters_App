@@ -26,6 +26,7 @@ ext {
 
     //Koin
     koinVersion = '2.0.0-rc-1'
+    koinTest = '2.0.1'
 
     //Retrofit
     retrofitVersion = '2.6.2'
@@ -112,5 +113,6 @@ ext {
             runner                : "androidx.test:runner:$runnerVersion",
             roboletric            : "org.robolectric:robolectric:$roboletricVersion",
             mockk                 : "io.mockk:mockk:$mockk",
+            koinTest              : "org.koin:koin-test:$koinTest"
     ]
 }

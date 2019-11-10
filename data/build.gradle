@@ -30,5 +30,6 @@ dependencies {
     testImplementation testDependencies.runner
     testImplementation testDependencies.roboletric
     testImplementation testDependencies.mockk
+    testImplementation testDependencies.koinTest
     androidTestImplementation testDependencies.espresso
 }
