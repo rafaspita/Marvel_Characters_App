@@ -29,5 +29,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:transitionName="ironMan"
+        android:id="@+id/animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.909"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/ironman_reveal"
+        app:lottie_speed="0.3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

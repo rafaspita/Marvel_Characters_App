@@ -38,6 +38,7 @@ dependencies {
 
     implementation globalDependencies.picasso
     implementation globalDependencies.circleImage
+    implementation globalDependencies.lottie
 
     implementation globalDependencies.kotlin
 
