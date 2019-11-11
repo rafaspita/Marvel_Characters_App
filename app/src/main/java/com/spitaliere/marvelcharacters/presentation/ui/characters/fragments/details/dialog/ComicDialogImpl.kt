@@ -27,6 +27,7 @@ class ComicDialogImpl : ComicDialog {
         binding.description.text = context.getString(R.string.description_s, comicsInfo.description)
 
         binding.root.setOnClickListener { dismiss() }
+        binding.container.setOnClickListener { dismiss() }
 
         dialog?.setContentView(binding.root)
         dialog?.show()
