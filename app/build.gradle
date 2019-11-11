@@ -29,7 +29,6 @@ dependencies {
     implementation globalDependencies.rxAndroid
 
     implementation globalDependencies.legacy
-    testImplementation testDependencies.junit
     androidTestImplementation testDependencies.runner
     androidTestImplementation testDependencies.espresso
 
@@ -65,4 +64,11 @@ dependencies {
 
     kapt globalDependencies.dataBinding
     implementation globalDependencies.materialDesign
+
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.runner
+    testImplementation testDependencies.roboletric
+    testImplementation testDependencies.mockk
+    testImplementation testDependencies.koinTest
+    androidTestImplementation testDependencies.espresso
 }

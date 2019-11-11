@@ -28,7 +28,7 @@ class DetailsFragment : BaseFragment<DetailsViewModel, FragmentDetailsBinding>()
             state.observeState(
                 success = { comicsAdapter.list = it },
                 failed = {
-                    binding.error.errorText.text = it?.message
+                    binding.error.errorText.text = it.message
                     binding.error.errorContainer.visible()
                 }
             )

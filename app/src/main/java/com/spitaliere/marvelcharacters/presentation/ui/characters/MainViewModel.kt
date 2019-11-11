@@ -5,7 +5,7 @@ import androidx.paging.PagedList
 import androidx.paging.RxPagedListBuilder
 import com.spitaliere.domain.features.characters.model.CharacterInfo
 import com.spitaliere.domain.features.characters.paging.CharacterDataSourceFactory
-import com.spitaliere.domain.features.characters.usecase.RetryUsecase
+import com.spitaliere.domain.features.characters.usecase.RetryUseCase
 import com.spitaliere.marvelcharacters.presentation.platform.base.BaseViewModel
 import com.spitaliere.marvelcharacters.presentation.platform.extension.invokeOnBackground
 import io.reactivex.Observable
@@ -17,7 +17,7 @@ import io.reactivex.schedulers.Schedulers
  **/
 class MainViewModel(
    private  val dataSourceFactory: CharacterDataSourceFactory,
-   private val retryUsecase: RetryUsecase
+   private val retryUseCase: RetryUseCase
 ) : BaseViewModel() {
 
     var characterPageList : Observable<PagedList<CharacterInfo>>
@@ -48,7 +48,7 @@ class MainViewModel(
             .cache()
     }
 
-    fun tryAgain() = retryUsecase
+    fun tryAgain() = retryUseCase
         .invokeOnBackground { dataSourceFactory.listeners.retry() }
         .subscribeBy(
             onError = {errorLiveData.postValue(it)}
