@@ -52,3 +52,9 @@ jobs:
           command: ./gradlew lint
       - store_artifacts:
           path: app/build/reports
+      - run:
+          name: Run Code Coverage
+          command: ./gradlew build jacocoTestReport
+      - run:
+          name: Submit Code Coverage results to codecov.io
+          command: bash <(curl -s https://codecov.io/bash)
