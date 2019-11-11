@@ -6,6 +6,6 @@ import io.reactivex.Completable
 /**
  * Created by Rafael Spitaliere on 09/11/2019.
  **/
-class RetryUsecase : CompletableInputUseCase<(() -> Unit)> {
+class RetryUseCase : CompletableInputUseCase<(() -> Unit)> {
     override fun run(input: () -> Unit): Completable = Completable.fromAction(input)
 }

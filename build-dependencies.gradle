@@ -25,7 +25,7 @@ ext {
     rxAndroidVersion = '2.1.1'
 
     //Koin
-    koinVersion = '2.0.0-rc-1'
+    koinVersion = '2.0.1'
     koinTest = '2.0.1'
 
     //Retrofit
