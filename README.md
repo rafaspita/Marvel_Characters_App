@@ -4,13 +4,7 @@
 
 App que lista os heróis da Marvel em uma lista infinita, consumindo a API da Marvel. Ao clicar no herói as informações sobre ele são apresentadas, mostrando também os quadrinhos que o mesmo está presente.
 
-<img src=https://media.giphy.com/media/h7Lo2bkeNwjzzCAvuW/giphy.gif
-	alt="App Demo"
-	style="float: left; margin-right: 10px;"
-	width="200"/> <img src=https://media.giphy.com/media/Ke2wtFF5T9c2YP215i/giphy.gif
-	alt="App Demo"
-	style="float: left; margin-right: 10px;"
-	width="200"/>
+<img src="./gif/app.gif" alt="app-demo" width="200px"/><img src="./gif/app2.gif" alt="app-demo" width="200px"/>
 
 # Libs
 * [RxKotlin](https://github.com/ReactiveX/RxKotlin)
